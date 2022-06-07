@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'primeiro-app';
+    contador: number = 0
+    simbolo: string[] = ["+","-"]
+
+    incrementar(): void{
+      this.contador++
+    }
+    decrementar(): void{
+      if(this.contador != 0){
+        this.contador--
+      }
+    }
+    adicionarValor(evento: any): void{   
+      if(evento.target.value.length == 0){
+        this.contador = 0
+      }else{
+        this.contador = parseInt(evento.target.value)
+      }
+    }
+
 }
